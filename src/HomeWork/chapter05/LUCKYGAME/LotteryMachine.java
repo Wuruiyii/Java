@@ -2,16 +2,19 @@ package HomeWork.chapter05.LUCKYGAME;
 
 import java.util.Random;
 
-public class LotteryMachine {
+public class LotteryMachine
+{
     private Prize[] prizes;
     private Random random;
     private long totalCount;
 
-    public LotteryMachine() {
+    public LotteryMachine()
+    {
         random = new Random();
         totalCount = 0;
 
-        prizes = new Prize[] {
+        prizes = new Prize[]
+        {
                 new Prize("一等奖", 1, 1),
                 new Prize("二等奖", 2, 4),
                 new Prize("三等奖", 5, 10),
@@ -30,29 +33,36 @@ public class LotteryMachine {
         return totalCount;
     }
 
-    public void reset() {
+    public void reset()
+    {
         totalCount = 0;
-        for (Prize prize : prizes) {
+        for (Prize prize : prizes)
+        {
             prize.resetCount();
         }
     }
 
-    public int getPrizeIndex(int number) {
-        for (int i = 0; i < prizes.length; i++) {
-            if (prizes[i].matches(number)) {
+    public int getPrizeIndex(int number)
+    {
+        for (int i = 0; i < prizes.length; i++)
+        {
+            if (prizes[i].matches(number))
+            {
                 return i;
             }
         }
         return -1;
     }
 
-    public void simulate(long times) {
+    public void simulate(long times)
+    {
         reset();
-
-        for (long i = 0; i < times; i++) {
+        for (long i = 0; i < times; i++)
+        {
             int number = random.nextInt(100) + 1;
             int index = getPrizeIndex(number);
-            if (index != -1) {
+            if (index != -1)
+            {
                 prizes[index].addCount();
                 totalCount++;
             }
