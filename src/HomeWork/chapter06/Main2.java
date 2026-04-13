@@ -1,9 +1,12 @@
 package HomeWork.chapter06;
 class Connection
 {
+    //懒惰型的单例
+    //private static Connection instance = new Connection(); 积极型的单例，区别在于创建时机的不同
    private  static Connection instance;
    private Connection(){};
-    public static Connection getInstance()
+   //synchronized 同步关键字，保证多线程下的线性安全
+    public static synchronized Connection getInstance()
     {
         if (instance == null)
         {
@@ -29,7 +32,5 @@ public class Main2
         c2.visit("https://openai.com");
 
         System.out.println(c1 == c2);
-
     }
-
 }

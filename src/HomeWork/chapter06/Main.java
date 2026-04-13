@@ -3,7 +3,7 @@ import java.lang.Math;
 class Circle
 {
     private double radius;
-    private static int total;
+    private static int total = 0;
     private int id;
 
     public Circle(double r)

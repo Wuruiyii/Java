@@ -30,8 +30,8 @@ public class LuckyGameFrame extends JFrame
         setTitle("幸运大转盘统计系统");
         setSize(700, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //点击关闭按钮时，直接结束整个程序
-        setLocationRelativeTo(null);
-        setResizable(false);
+        setLocationRelativeTo(null); //居中显示
+        setResizable(false); //不可改变大小
     }
 
     private void initComponents()
@@ -53,8 +53,8 @@ public class LuckyGameFrame extends JFrame
 
         resultArea = new JTextArea();
         resultArea.setFont(new Font("微软雅黑", Font.PLAIN, 16));
-        resultArea.setEditable(false);
-        resultArea.setLineWrap(true);
+        resultArea.setEditable(false); //设置为不可编辑
+        resultArea.setLineWrap(true); //自动换行
         resultArea.setWrapStyleWord(true);
 
         resultArea.setText(
@@ -93,7 +93,7 @@ public class LuckyGameFrame extends JFrame
 
     private void initEvents()
     {
-        simulateButton.addActionListener(e -> startSimulation());
+        simulateButton.addActionListener(e -> startSimulation()); //点击按钮时，执行 startSimulation()
 
         resetButton.addActionListener(e -> {
             inputField.setText("");
