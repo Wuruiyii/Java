@@ -9,7 +9,8 @@ public class onclass
         Scanner sc = new Scanner(System.in);
         System.out.print("请输入一个1-12的月份数字：");
         int month = sc.nextInt();
-        String season = switch (month) {
+        String season = switch (month)
+        {
             case 1, 2, 12 -> "冬季";
             case 3, 4, 5 -> "春季";
             case 6, 7, 8 -> "夏季";
